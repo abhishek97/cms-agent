@@ -1,0 +1,48 @@
+<h1>{{title}}</h1>
+
+
+
+<p>Agent Name :  {{username}}</p>
+
+
+{{#if tickets}}
+    <table class="table gapped">
+        <thead class="thead-inverse">
+        <tr>
+            <th>#</th>
+            <th>Customer ID</th>
+            <th>Time</th>
+            <th>Body</th>
+            <th>Address</th>
+            <th>Mobile</th>
+            <th> Options </th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each tickets as |ticket| }}
+        <tr>
+            <th scope="row">{{ticket.id}}</th>
+            <td>{{ticket.cid}} </td>
+            <td>{{ticket.time}} </td>
+            <td>{{ticket.body}} </td>
+            <td> {{ticket.customer.Address}} </td>
+            <td> {{ticket.customer.Mobile}} </td>
+            <td>
+                <button class="btn btn-primary" onclick="resolve({{ticket.id}})" > Resolve </button>
+            </td>
+
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <div class="card card-outline-primary mb-3 text-center">
+        <div class="card-block">
+            <blockquote class="card-blockquote">
+                <p>No Complaint Tickets for Now  :) .</p>
+                <footer> Alphanet Broadband Private Limited</footer>
+            </blockquote>
+        </div>
+    </div>
+{{/if}}
+

@@ -1,0 +1,29 @@
+<div class="container onlyContent" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h1> LOGIN </h1>
+            <form action="/login" method="post" >
+            <div class="input-group gapped">
+                <span class="input-group-addon" id="basic-addon1">@</span>
+                 <input name="username" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" >
+            </div>
+
+
+            <div class="input-group gapped">
+                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>  </span>
+
+                <input name="password" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+            </div>
+
+                   <input type="submit" class="btn btn-primary" value="Log In"> </input>
+            </form>
+        </div>
+
+        {{#if this.LogInError}}
+            <div class="gapped">
+                {{this.LogInError}}
+            </div>
+        {{/if}}
+    </div>
+
+</div>
